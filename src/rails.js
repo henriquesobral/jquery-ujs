@@ -201,7 +201,7 @@
       });
     },
 
-   /* For 'data-confirm' attribute:
+   /* For 'data-confirm' and 'disabled' attribute:
       - Fires `confirm` event
       - Shows the confirmation dialog
       - Fires the `confirm:complete` event
@@ -212,6 +212,7 @@
       return false. The `confirm:complete` event is fired whether or not the user answered true or false to the dialog.
    */
     allowAction: function(element) {
+      if (element.disabled) { return false; }
       var message = element.data('confirm'),
           answer = false, callback;
       if (!message) { return true; }
