@@ -212,7 +212,7 @@
       return false. The `confirm:complete` event is fired whether or not the user answered true or false to the dialog.
    */
     allowAction: function(element) {
-      if (element.disabled) { return false; }
+      if (element.attr('disabled')) { return false; }
       var message = element.data('confirm'),
           answer = false, callback;
       if (!message) { return true; }
